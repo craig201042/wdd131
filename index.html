@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wdd131</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - Craig Zeng</title>
+    <meta name="description" content="WDD 131-Dynamic Web Fundamentals(Craig Zeng's course assignment portal)">
+    <meta name="author" content="Craig Zeng">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gabarito:wght@400..900&display=swap"
+        rel="stylesheet">
+    <script src="scripts/getDates.js" defer></script>
 </head>
+
 <body>
-    <h1>WDD 131</h1>
+    <header>
+        <h1 contenteditable>WDD 131 - Dynamic Web Fundamentals - Craig Zeng</h1>
+        <nav>
+            <ul class="navigation">
+                <li><a href="www.linkedin.com/in/craigzeng" title="">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/." title="">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/9?lang=eng#note6a"
+                        title="">Scripture</a></li>
+                <li><a href="#" title="">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main-container">
+        <main contenteditable>
+            <section>
+                <h2>About Me</h2>
+                <div id="card1">
+                    <p>My name is Criag.I'm from Taiwan and have been a membe of the church of Jesus Christ of latterday saints for 20 years.
+                        As you can see in the right bar side.I have several hobbies I love to do in my liesure time.Those are good ways for me to release my pressure.
+                    </p>
+                    <img src="images/craig.jpg" alt="Craig" width="200" height="200">
+                </div>
+            </section>
+            <section id="card2">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Jogging</li>
+                    <li>Watching movies</li>
+                    <li>Playing Baseball</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <footer contenteditable class="foot">
+        <p>&copy;<span id="currentyear"></span> ★ Craig Zeng ★ Taiwan</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>

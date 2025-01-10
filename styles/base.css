@@ -1,0 +1,95 @@
+:root {
+    --heading-font: 'Anton', sans-serif;
+    --paragrah-font: 'Gabarito', sans-serif;
+}
+
+#main-container{
+    display: grid;
+    justify-content: center;
+}
+
+header {
+    background: goldenrod;
+}
+
+
+main {
+    background: coral;
+    display: grid;
+    height: 100vh;
+    grid-template: 1fr / 3fr 1fr;
+    width: 1000px;
+}
+
+
+footer {
+    background: wheat;
+    padding: 2rem;
+    text-align: center;
+    margin: 5px 0 0 0;
+}
+
+
+h1, h2{
+    text-align: center;
+    background-color: rgb(0 110 182 / 1);
+    padding: 0.5rem;
+    color: #fff;
+}
+
+
+.navigation {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333;
+    align-items: center;
+    margin: 0 0 5px 0;
+}
+
+.navigation li {
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+}
+
+.navigation a {
+    display: block;
+    color: #eee;
+    padding: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+}
+
+section{
+    margin: 2px;
+    border: 2px solid rgb(95 97 110);
+    border-radius: 0.5em;
+}
+#card1{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#card1 img, p{
+    margin: 10px;
+    font-size: 1.5rem;
+}
+#card2 ul{
+    margin: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.foot{
+   display: grid;
+   align-items: center;
+   justify-items: center;
+}
