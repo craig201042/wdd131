@@ -1,0 +1,95 @@
+:root {
+    --heading-font: 'Anton', sans-serif;
+    --paragrah-font: 'Gabarito', sans-serif;
+}
+
+header {
+    background: goldenrod;
+}
+
+main {
+    background: coral;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2{
+    text-align: center;
+    padding: 0.5rem;
+    color: #fff;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-gap: 25px;
+    place-items: center;
+}
+
+figure {
+    background-color:#fff;
+}
+img { 
+    width: 100%; 
+    height: auto; 
+    margin: .5rem;
+}
+figcaption {font-size: smaller;
+}
+
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: #000;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "❌";
+}
+
+.open a {
+	display: block;
+}
+.navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #333;
+    align-items: center;
+}
+
+.navigation li {
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+}
+
+.navigation a {
+    display: block;
+    color: #eee;
+    padding: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation a:hover {
+    font-weight: 700;
+    background-color: #eee;
+    color: #000;
+}
+
+footer{
+    background: wheat;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}

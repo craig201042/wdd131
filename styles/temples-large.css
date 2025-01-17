@@ -1,0 +1,15 @@
+@media screen and (min-width: 37.5em) {
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 25px;
+        place-items: center;
+    }
+
+    #menu {
+		display: none; 
+	}
+    .navigation{
+        flex-direction: row;
+    }
+}
