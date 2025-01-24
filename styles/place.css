@@ -1,6 +1,7 @@
 :root {
     --heading-font: 'Anton', sans-serif;
     --paragrah-font: 'Gabarito', sans-serif;
+    --background-color: white;
 }
 
 header {
@@ -8,7 +9,7 @@ header {
 }
 
 main {
-    background: white;
+    background: var(--background-color);
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -45,6 +46,7 @@ input{
     padding:5px 5px;
     vertical-align: middle;
     color:black;
+    font: var(--paragrah-font);
 }
 
 
@@ -54,4 +56,5 @@ footer{
     display: grid;
     align-items: center;
     justify-items: center;
+    font: var(--paragrah-font);
 }
