@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Country Page - Craig Zeng</title>
+    <meta name="description" content="WDD 131-Dynamic Web Fundamentals(Craig Zeng's course assignment portal)">
+    <meta name="author" content="Craig Zeng">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gabarito:wght@400..900&display=swap"
+        rel="stylesheet">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Taiwan</h1>
+    </header>
+    <main>
+        <div class="hero">
+          <picture>
+            <source srcset="images/jademountain-large.webp" media="(min-width: 1000px)">
+            <source srcset="images/jademountain-medium.webp" media="(min-width: 500px)">
+            <img src="images/jademountain-small.webp" alt="jade mountain" width="427" height="340"> 
+          </picture> 
+          <section class="data">
+          <h2>Data</h2>
+          <div class="d1">
+          <div>
+             <label for="area">Area:</label><input type="text" id="area">
+          </div>
+          <div>
+             <label for="people">Population:</label><input type="text" id="people">
+          </div>
+          <div>
+             <label for="capital">Capital:</label> <input type="text" id="capital">
+          </div>
+          <div>
+             <label for="lang">languages:</label> <input type="text" id="lang">
+          </div>
+          <div>
+             <label for="currency">Currency:</label><input type="text" id="currency">
+          </div>
+          </div>
+          </section>
+         <section class="weather">
+            <h2>Weather</h2>
+            <div class="d2">
+              <img src="images/sunset_icon.svg" alt="sunset" width="200" height="150">
+           <div>
+             <label for="temp">Temprature:</label><input type="text" id="temp">
+          </div>
+          <div>
+             <label for="condition">Conditions:</label> <input type="text" id="condition">
+          </div>
+          <div>
+             <label for="wind">Wind:</label><input type="text" id="wind">
+          </div>
+          <div>
+             <label for="windchill">Wind chill:</label> <input type="text" id="windchill">
+          </div>
+            </div>
+         </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> ★ Craig Zeng ★ Taiwan</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

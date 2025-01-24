@@ -1,0 +1,44 @@
+@media screen and (min-width: 1000px) {
+    .hero{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        height: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    .hero img{
+        width: 100%;
+        height: auto;
+    }
+    .data{
+        position: absolute;
+        top: 10%;
+        left: 5px;
+        color: black;
+    }
+    section{
+        background-color: bisque;
+        opacity: 0.5;
+    }
+
+    h2{
+        color: black;
+    }
+ 
+    .weather h2::after{
+         content: "⛅";
+    }
+    .weather{
+        position: absolute;
+        top: 10%;
+        right: 5px;
+    }
+    .weather img{
+        display: none;
+    }
+    input{
+        background-color: transparent;
+    }
+
+}
