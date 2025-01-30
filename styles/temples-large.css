@@ -12,4 +12,11 @@
     .navigation{
         flex-direction: row;
     }
+
+    #temples-container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 25px;
+        place-items: center;
+    }
 }
