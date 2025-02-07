@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: #ddd;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+main {
+    padding: 0 2%;
+    min-height: 20rem;
+    color: black;
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: #ddd;
+    padding: .5rem 2%;
+    text-align: center;
+    color: black;
+}
