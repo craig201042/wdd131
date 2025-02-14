@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Please contact us if you have any questions about rafting trips in Taiwan."> 
+    <meta name="keywords" content="HTML, CSS, form">
+    <meta name="author" content="Craig Zeng">
+    <title>Contact Us | Taiko White Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gabarito:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/contact-large.css">
+    <script src="scripts/contact.js" defer></script>
+</head>
+<body>
+    <header> 
+        <img src="images/logo.jpeg" alt="Rafting Site Logo" width="200" height="200">
+        <nav>
+         <ul class="navigation">//link needed to be updated 
+            <li><a href="https://craig201042.github.io/wdd130/wwr/index.html">Home</a></li>
+            <li><a href="https://craig201042.github.io/wdd130/wwr/about.html">About</a></li>
+            <li><a href="https://craig201042.github.io/wdd130/wwr/trip.html">Trips</a></li>
+            <li><a href="https://craig201042.github.io/wdd130/wwr/contact.html">Contact</a></li>
+         </ul>
+        </nav>
+    </header>
+    <main>
+     <section>
+        <h1>Company Information</h1>
+        <div class="map">
+            <ul>
+                <li>Address:No.4 Zong Zeng Rd. Miao-Li city</li>
+                <li>Phone Number:037-348902</li>
+                <li>Email:28905@taiko.com</li>
+           </ul>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29028.547099068892!2d120.81862456510507!3d24.569573051271558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1697255549500!5m2!1szh-TW!2stw"></iframe>
+        </div> 
+     </section>
+     <section>
+            <h2>Employee profile</h2>
+            <div class="profile">
+             <figure>
+                <img src="images/happyemployee01.jpg" alt="employee03" loading="lazy" width="275" height="183">
+                <figcaption>Facility Manager</figcaption>
+             </figure>
+             <figure>
+                <img src="images/happyemployee02.jpg" alt="employee02" loading="lazy" width="275" height="183">
+                <figcaption>Technology Manager</figcaption>
+             </figure>
+             <figure>
+                <img src="images/happyemployee03.jpg" alt="employee01" loading="lazy" width="275" height="183">
+                <figcaption>HR Manager</figcaption>
+             </figure>
+            </div> 
+     </section>
+     <form method="get" action="thank.html">
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="form-item column1">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </fieldset>
+        <div class="form-item-column">     
+            <input type="radio" id="inquiry" name="general"><label for="inquiry">General Inquiry</label>
+            <input type="radio" id="reservation" name="reservation"><label for="reservation">Reservation Question</label>
+            <input type="radio" id="suggestion" name="suggestion"><label for="suggestion">Website Suggestion</label>
+        </div>    
+        
+            <label for="message">the message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        <div class="form-item-column2">       
+            <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+            <input type="checkbox" id="subscribe" name="subscribe">
+        </div>
+        <label><input id="proposal" type="submit" value="Proposal Sent"></label>
+     </form>
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> ★ Taiko White Adventure ★ Craig Zeng ★</p>
+        <p id="lastModified"></p>
+        <nav class="sociallinks">
+            <a href="https://facebook.com/">
+                <img src="images/fb.png" alt="fb">
+            </a>
+            <a href="https://twitter.com/">
+                <img src="images/twitter.png" alt="twitter">
+            </a>
+            <a href="https://www.instagram.com/">
+                <img src="images/instagram.png" alt="instagram">
+            </a>
+            <a href="images/wireframe.png">
+                <img src="images/wireframeicon.png" alt="wireframe">
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>

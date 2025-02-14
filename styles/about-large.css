@@ -1,0 +1,15 @@
+@media screen and (min-width: 600px) {
+    .adventure{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+    footer{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font: var(--paragrah-font);
+    }
+ 
+}

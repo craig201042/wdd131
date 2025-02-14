@@ -1,0 +1,124 @@
+:root{
+    --primary-color: #478C4F;
+    --secondary-color: #478C4F;
+    --accent1-color: #FBFBFF;
+    --accent2-color: #F8F1E3;
+
+    --heading-font: 'Anton', serif;
+    --paragrah-font: 'Gabarito', serif;
+
+    --nav-background-color: #E7DFC6;
+    --nav-link-color: #176087;
+    --nav-hover-link-color: #1D84B5;
+    --nav-hover-background-color: #FFFFFF;
+}
+h2,h3{
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+header{
+    padding: 20px;
+    background-color: var(--accent1-color);
+    margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+    width: 100%;
+    max-width: 1000px;
+}
+body{
+    font-family: var(--paragrah-font);
+    padding: 20px;
+}
+
+.sociallinks{
+    display: flex;
+	list-style: none;
+
+}
+.sociallinks a{
+    display: block;
+	padding: 20px;
+    color: var(--nav-link-color);
+    text-decoration: none;
+}
+.sociallinks img{
+    width: 50px;
+    height: 50px;
+}
+.hero{
+    position: relative;
+}
+.hero img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+article{
+    background-color: #F8F1E3;
+    opacity: 0.8;
+}
+.navigation{
+	display: flex;
+    flex-wrap: wrap;
+	list-style: none;
+}
+.navigation a{
+	display: block;
+	color: navy;
+	padding: 20px;
+	text-decoration: none;
+    text-align: center;
+    justify-items: center;
+    font-size: 1.5rem;
+}
+footer{
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    align-items: center;
+    margin-top: 20px;
+}
+footer p{
+    text-align: left;
+    font-size: 1rem;
+}
+
+.adventure{
+    background-color: var(--accent1-color);
+    display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+}
+.adventure img{
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+.adventure p{
+    height: 100%;
+    max-height: 280px;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 3px solid #478C4F;
+}
+td {
+    border: 3px solid #F8F1E3;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+button{
+    margin: 1rem;
+    padding: 1rem;
+    color: #000;
+    background-color: azure;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+}
+button:hover{
+    background-color: blue;
+}
