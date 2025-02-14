@@ -10,5 +10,7 @@
         justify-items: center;
         font: var(--paragrah-font);
     }
- 
+    .hero img{
+        width: 100%;
+    }
 }
