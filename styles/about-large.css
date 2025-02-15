@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1000px) {
     .adventure{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -14,5 +14,12 @@
     .hero img{
         width: 100%;
         height: auto;
+    }
+    .hero{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        height: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
