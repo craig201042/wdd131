@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光照世人音樂會 - 活動儀表板</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --poster-red: #D32F2F;
+            --poster-dark: #2c1e1a; /* 新增：深色字體顏色，提升閱讀性 */
+            --white-glass: rgba(255, 255, 255, 0.9); /* 稍微增加背景不透明度，讓字更清楚 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Serif TC', serif;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 50%, #8d6e63 100%);
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--poster-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: var(--white-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .star-decoration {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            color: var(--poster-red);
+            font-size: 80px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        h1 {
+            color: var(--poster-red);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #5d4037;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--poster-red);
+        }
+
+        .card h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            color: #795548;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* 修改後的倒數計時樣式 */
+        .countdown-timer {
+            font-family: 'Roboto', sans-serif; /* 數字使用 Roboto 字體比較好看 */
+            color: #1a1a1a; /* 改為極深的灰黑色 */
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        /* 數字本身的樣式 */
+        .countdown-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #212121; /* 深黑色 */
+        }
+
+        /* 單位(日、時、分)的樣式 */
+        .countdown-unit {
+            font-size: 1rem;
+            color: #4e342e; /* 深咖啡色 */
+            margin-right: 5px;
+            font-weight: normal;
+        }
+
+        /* 剩餘名額樣式 */
+        .seats-counter {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--poster-red); /* 名額保留紅色以示警急感 */
+        }
+
+        .cta-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .cta-text {
+            color: #d84315;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .btn-register {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--poster-red);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+            background: #b71c1c;
+        }
+
+        .event-details {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #444; /* 字體改深 */
+            line-height: 1.6;
+        }
+
+        .loading {
+            font-size: 1rem;
+            color: #999;
+        }
+
+        @media (min-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="star-decoration"><i class="fa-solid fa-star"></i></div>
+        
+        <h1>光照世人音樂會</h1>
+        <div class="subtitle">~ 體驗祂的光 ~</div>
+
+        <div class="info-grid">
+            <div class="card">
+                <h3><i class="fa-regular fa-clock"></i> 距離音樂會開始</h3>
+                <div id="event-countdown" class="countdown-timer">
+                    計算中...
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fa-solid fa-users"></i> 剩餘席位</h3>
+                <div id="seats-remaining" class="seats-counter">
+                    <span class="loading"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                </div>
+                <div style="font-size: 0.8rem; color: #555;">總名額：400</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p class="cta-text">名額有限，請盡速報名！</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSezSjo_J7uXUwbLZOLVb-wbu7d3VHVTkb1cc9lpxPygwDYsDw/viewform" target="_blank" class="btn-register">
+                <i class="fa-solid fa-pen-to-square"></i> 立即報名
+            </a>
+        </div>
+
+        <div class="event-details">
+            <p><i class="fa-solid fa-calendar-day"></i> 活動時間：12月13日 (六) 14:30 ~ 16:00</p>
+            <p><i class="fa-solid fa-location-dot"></i> 地點：竹北市文昌街129號</p>
+        </div>
+    </div>
+
+    <script>
+        // === 1. 活動倒數計時邏輯 (格式更新) ===
+        function updateEventCountdown() {
+            const eventDate = new Date("December 13, 2025 14:30:00").getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById("event-countdown").innerHTML = "<span class='countdown-num'>活動進行中</span>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // 補零
+            const d = days < 10 ? "0" + days : days;
+            const h = hours < 10 ? "0" + hours : hours;
+            const m = minutes < 10 ? "0" + minutes : minutes;
+
+            // 輸出格式： 00日 00時 00分 (數字用 class 放大加深)
+            const htmlContent = `
+                <span class="countdown-num">${d}</span><span class="countdown-unit">日</span>
+                <span class="countdown-num">${h}</span><span class="countdown-unit">時</span>
+                <span class="countdown-num">${m}</span><span class="countdown-unit">分</span>
+            `;
+
+            document.getElementById("event-countdown").innerHTML = htmlContent;
+        }
+
+        setInterval(updateEventCountdown, 1000);
+        updateEventCountdown();
+
+        // === 2. Google Sheet 名額連動邏輯 (維持加總功能) ===
+        async function fetchSeatsData() {
+            const totalSeats = 400;
+            const seatsDisplay = document.getElementById("seats-remaining");
+            const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSYHjsg7i5GVvwa-2EAOvgmM0HybQI7RD83r5NbuXfsN2A2tblhwF8na2NjRKuHdqYQaQHQnTGKTQnj/pub?output=csv';
+
+            try {
+                const response = await fetch(csvUrl);
+                if (!response.ok) throw new Error("Network response was not ok");
+                const data = await response.text();
+                const rows = data.split(/\r\n|\n/).filter(row => row.trim() !== '');
+
+                if (rows.length === 0) {
+                    seatsDisplay.innerText = totalSeats;
+                    return;
+                }
+
+                // 找人數欄位
+                const headers = rows[0].split(','); 
+                const keywords = ['人數', '幾位', '數量', 'count', 'number', 'people'];
+                let countColumnIndex = -1;
+
+                for (let i = 0; i < headers.length; i++) {
+                    const headerText = headers[i].replace(/"/g, '').toLowerCase();
+                    if (keywords.some(k => headerText.includes(k))) {
+                        countColumnIndex = i;
+                        break;
+                    }
+                }
+
+                // 若找不到預設第3欄 (index 2)
+                if (countColumnIndex === -1) countColumnIndex = 2;
+
+                // 加總
+                let totalRegistered = 0;
+                for (let i = 1; i < rows.length; i++) {
+                    const cols = rows[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/); 
+                    if (cols.length > countColumnIndex) {
+                        let valStr = cols[countColumnIndex].replace(/"/g, '').trim();
+                        let match = valStr.match(/\d+/);
+                        let val = match ? parseInt(match[0], 10) : 0;
+                        totalRegistered += val;
+                    }
+                }
+
+                const remaining = totalSeats - totalRegistered;
+                seatsDisplay.innerText = remaining > 0 ? remaining : 0;
+
+            } catch (error) {
+                console.error("讀取失敗:", error);
+                if (seatsDisplay.innerHTML.includes("fa-spin")) {
+                   seatsDisplay.innerText = "---";
+                }
+            }
+        }
+
+        fetchSeatsData();
+        setInterval(fetchSeatsData, 10000); 
+
+    </script>
+</body>
+</html>
